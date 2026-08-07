@@ -1,0 +1,59 @@
+.motionRoot {
+  display: contents;
+}
+
+.motionToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  font: 650 0.72rem/1 var(--font-geist-mono, ui-monospace, monospace);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.motionToggle:hover {
+  border-bottom-width: 2px;
+}
+
+.motionToggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.motionIndicator {
+  position: relative;
+  width: 1.4rem;
+  height: 0.72rem;
+  flex: none;
+  border: 1px solid currentColor;
+}
+
+.motionIndicator::after {
+  position: absolute;
+  top: 0.12rem;
+  left: 0.12rem;
+  width: 0.36rem;
+  height: 0.36rem;
+  background: currentColor;
+  content: "";
+  transition: transform 150ms ease;
+}
+
+.motionToggle[aria-pressed="true"] .motionIndicator::after {
+  transform: translateX(0.65rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motionIndicator::after {
+    transition: none;
+  }
+}

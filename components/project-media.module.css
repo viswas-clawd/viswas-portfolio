@@ -1,0 +1,22 @@
+.root {
+  margin: 0;
+  border: 1px solid #2e2e2e;
+  background: #000;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.root figcaption {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #2e2e2e;
+  color: #b8b8b8;
+  font: 650 0.62rem/1.4 "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
