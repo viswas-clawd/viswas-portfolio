@@ -9,6 +9,7 @@ import {
 
 export interface BuildMetadataOptions extends PageSeo {
   type?: "website" | "article" | "profile";
+  includeDescription?: boolean;
 }
 
 /**
@@ -21,6 +22,7 @@ export function buildMetadata({
   path,
   image,
   type = "website",
+  includeDescription = true,
 }: BuildMetadataOptions): Metadata {
   const config = getSeoRuntimeConfig();
   const canonical = canonicalUrl(path);
@@ -29,7 +31,7 @@ export function buildMetadata({
 
   return {
     title,
-    description,
+    ...(includeDescription ? { description } : {}),
     ...(canonical ? { alternates: { canonical } } : {}),
     robots: {
       index: config.indexingEnabled,
@@ -46,14 +48,14 @@ export function buildMetadata({
       type: openGraphType,
       siteName: SITE_NAME,
       title,
-      description,
+      ...(includeDescription ? { description } : {}),
       ...(canonical ? { url: canonical } : {}),
       ...(images ? { images } : {}),
     },
     twitter: {
       card: image ? "summary_large_image" : "summary",
       title,
-      description,
+      ...(includeDescription ? { description } : {}),
       ...(images ? { images } : {}),
     },
   };
@@ -61,7 +63,7 @@ export function buildMetadata({
 
 export function buildRouteMetadata(
   route: SiteRoute,
-  options?: Pick<BuildMetadataOptions, "image" | "type">,
+  options?: Pick<BuildMetadataOptions, "image" | "type" | "includeDescription">,
 ): Metadata {
   return buildMetadata({ ...ROUTE_SEO[route], ...options });
 }

@@ -88,6 +88,10 @@ test("server-renders the product-judgment homepage with private-preview robots",
   assert.match(html, /Recruiter handoff/i);
   assert.match(html, /href="\/llm\.txt"/i);
   assert.match(html, /name="robots" content="noindex, nofollow/i);
+  assert.match(html, /property="og:image" content="https:\/\/private-preview\.invalid\/portrait-wordfield-v2\.png"/i);
+  assert.match(html, /name="twitter:image" content="https:\/\/private-preview\.invalid\/portrait-wordfield-v2\.png"/i);
+  assert.doesNotMatch(html, /(?:name="description"|property="og:description"|name="twitter:description")/i);
+  assert.doesNotMatch(html, /(?:og|twitter)\.png/i);
   assert.doesNotMatch(html, /Role fit|RESOLVE\s*\/\s*ORGANIZE\s*\/\s*CONNECT\s*\/\s*EXPLORE/i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });

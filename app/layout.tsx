@@ -24,7 +24,10 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  ...buildRouteMetadata(ROUTES.home, { image: "/og.png" }),
+  ...buildRouteMetadata(ROUTES.home, {
+    image: "/portrait-wordfield-v2.png",
+    includeDescription: false,
+  }),
   icons: {
     icon: "/portrait-wordfield-v2.png",
     shortcut: "/portrait-wordfield-v2.png",
