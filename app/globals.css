@@ -2520,7 +2520,7 @@ summary {
   text-transform: uppercase;
 }
 
-@media (max-width: 74rem) {
+@media (max-width: 78rem) {
   .site-header__inner {
     grid-template-columns: 1fr auto;
   }
