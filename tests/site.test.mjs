@@ -566,6 +566,7 @@ test("keeps the portrait fully framed, the intro legible, and hero fallbacks acc
   assert.match(homepage, /data-private-reference-derivative="true"/i);
   assert.match(homepage, /data-portrait-asset="portrait-wordfield-v2"/i);
   assert.match(homepage, /portrait-wordfield-v2\.png/i);
+  assert.match(homepage, /rel="(?:shortcut )?icon"[^>]*href="\/portrait-wordfield-v2\.png"/i);
   assert.match(homepage, /<img\b[^>]*\balt=""[^>]*>/i);
   assert.doesNotMatch(homepage, /portrait-density-mask\.png/i);
   for (const route of ["software", "hardware", "career", "knowledge", "beyond-work"]) {

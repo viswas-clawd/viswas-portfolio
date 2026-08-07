@@ -1,3 +1,3 @@
 export function GET(request: Request) {
-  return Response.redirect(new URL("/favicon.png", request.url), 307);
+  return Response.redirect(new URL("/portrait-wordfield-v2.png", request.url), 307);
 }

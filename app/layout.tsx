@@ -26,8 +26,8 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   ...buildRouteMetadata(ROUTES.home, { image: "/og.png" }),
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
+    icon: "/portrait-wordfield-v2.png",
+    shortcut: "/portrait-wordfield-v2.png",
   },
   applicationName: "Viswas Vuppala",
   creator: "Viswas Vuppala",
